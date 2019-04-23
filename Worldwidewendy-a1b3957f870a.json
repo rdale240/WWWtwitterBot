@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "world-wide-wendy-237704",
+  "private_key_id": "a1b3957f870a50e0319c5f19f0f4ff31df30c7de",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC/iE6Ex1eJdIsj\nEuVTc7eo3qog1rOfQRSSMyhhNEijRnzwYNbVIp7LFbyOS2ALuQ8AZDs9xxFTrkNq\n3bhQTiiuOwNoDWnMTM79xSPf1r3eRykb76rSGyPigu/8XriuJamyWvwnUuQzUYO1\nKmirFvstLVOL95mfnFo67DT9Twti1voHTlJ794csJKfT64xjifjufPWQrv6co23L\nQ7bZRlZT5Mig0lxTgZPoYdxh2Myq76LPvuCqYA91SeBLPHCmnFpFWQrFc1AFnonZ\n41vWcSJT8I+CXcLfliilhRSn+BaEiHJ5ySWjfP22xuclE1gqVXID5rQNsz/nvsWj\nYNMOmNnhAgMBAAECggEADdaMTb2VToIUF2mjFf9zUokb45l/is8J7HIzxaogYWOT\nXU6x1t5UeLnOUL2TZ+Vr9wxG13TNhK0/g7YXPf4XpFbxLRBjB3a5Mc6Pg/mg6DFd\n//216s45LoFlU2eIklR4SUGXnEO55xdJm8o/m7TiWuY+dgtilwyV3FH6lh6i5PYh\nCKUTvCmM9/YuXCFCbZpTY5NTGKA8wihosUe8Oj6ozszWZPXgGwOdfIeRjUBfQE0A\nwLpqlbhfRgODlp+YtUu5oJ7+VdJY0Wm9Qz976nMhKUEX60BILHQ7WiExPyiv749J\nB1sgN8QpH0SStxnf5RBvRgm7vU7Iv1RSWNBdOC6r0QKBgQD6CE8SMnOjfEbq8dF5\nwsTmncVJ408L4QoRo81TIFOi742LMWRGMWO5qMsbflrPVh4GUPC/AxhdNBpBjGi/\nwzi07PkwjqpMuELjFxLLJuQhkssK4PBJHGYZUzr0MEBHmhX7rGL0dM4/5GHobap2\n42GXUVxUvayFOrceB9n7UvX3lQKBgQDEGpCBJx02RXUMuJmjGS/Z7ivt2yZ0r1Ew\nz3mNTMTnilBc92PdUQGoSLkUpVIrW9Vkmy4wWhOvh86YFoLYXKJ5XwuDO49mCeiC\nbf/q7LJGbJMLnQmX/9PH080NlG4qfUbo2Ic/yS5lZtIZmsb0Qegak8biM/AgeZwi\n0L4mXmEWHQKBgQDDfcWdG7dQhvXH8sRu6DsdeRPtPn3qcsx1mFYMfYUHKzfHMhoN\ny8YGPpR3babA37tgAt8I6fmdvgQdZhPsg04OIA6BybobfCJH/h1im4jZOzXnzpHx\nB/RILsw0apmHolE30sQYEE/GouFuYnhatlPyhNmlJBwEmzDbmRX1LBtGtQKBgFKJ\n28iAbgspsNpp2ECNmVZgqJy0YLs8DzA8Iy0V4sqRrMF0XtQIBGqQMVY/PxaA0JBH\nwGkZgK+guZPJ5cirNLdhCbdymiiYgwRiyBRZC7AYgsugjSksxDaXLvdIQhYgJHhc\nqpBuXNjRLh0YyCSGmOqWyF7s/WStysnckiwUDUkBAoGAQ3UWV/0HV0BRcv593Gut\nP76MQFmzZzKnaZU5rz1uwwXe11eFFnbtfGelX6rjznuh56JalHXPs4UJOyIKbz3O\nTL8Nk8Z4Ft19MaXu+GyX8u/rWWMqA5OOqscgq1cx5bdpMUK/D09MEZ/PkkTBpweH\n9G9JIbDNjkepzr3b3F/K4nc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "twitter-sentiment@world-wide-wendy-237704.iam.gserviceaccount.com",
+  "client_id": "115766682424228315967",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/twitter-sentiment%40world-wide-wendy-237704.iam.gserviceaccount.com"
+}
