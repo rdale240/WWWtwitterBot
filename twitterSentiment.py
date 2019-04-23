@@ -6,6 +6,7 @@ from google.cloud import language
 from google.cloud.language import enums
 from google.cloud.language import types
 
+import dotenv
 import tweepy
 import csv
 import pandas as pd
@@ -17,18 +18,19 @@ previousTime = (now + datetime.timedelta(days = -1)).isoformat()
 now = now.isoformat()
 print("Now",now)
 print("Previous Time", previousTime)
+####input your credentials here
+consumer_key = ''
+consumer_secret = ''
+access_token = ''
+access_token_secret = ''
+auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+auth.set_access_token(access_token, access_token_secret)
+api = tweepy.API(auth,wait_on_rate_limit=True)
 
 def getTweets():
-    ####input your credentials here
-    consumer_key = ''
-    consumer_secret = ''
-    access_token = ''
-    access_token_secret = ''
-    auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
-    auth.set_access_token(access_token, access_token_secret)
-    api = tweepy.API(auth,wait_on_rate_limit=True)
+    
     #####United Airlines
-    # Open/Create a file to append data
+    # Open/Create a file to write data
     csvFile = open('tweets.csv', 'w')
     #Use csv Writer
     csvWriter = csv.writer(csvFile)
@@ -37,32 +39,37 @@ def getTweets():
     since="2017-04-03").items():
         print(tweet)
         print (tweet.created_at, tweet.text)
-        csvWriter.writerow([tweet.created_at, tweet.text.encode('utf-8'), tweet.user])
+        csvWriter.writerow([tweet.created_at, tweet.text.encode('utf-8'), tweet.user, tweet.id])
 
 
-def threshold(score):
+def threshold(score, statusID):
     if (score > .8):
         #Overwhelming Positive
+        api.update_status(status="We're Glad to hear it! Thanks for your awesome feedback. Be sure to mention this tweet with your next order to get a free drink! While you're at it, check out our indiegogo :)",in_reply_to_status_id=statusID)
         print("+positive", score)
 
     elif (score > .4):
         #Pretty Positve
+        api.update_status(status="Thanks for your awesome feedback. We look forward to seeing you soon!",in_reply_to_status_id=statusID)
         print("positive", score)
 
     elif (score > .1):
         #Average
+        api.update_status(status="Thanks for your feedback!",in_reply_to_status_id=statusID)
         print("average", score)
 
     elif (score < -.2 and score >-.4):
         #Unhappy
+        api.update_status(status="Sorry to hear it. If you give us another try, we'll sweeten the deal. Be sure to mention this tweet with your next order to get a free drink!",in_reply_to_status_id=statusID)
         print("negative", score)
 
     elif (score < -.4):
         #Very Unhappy
+        api.update_status(status="Sorry to hear it! We pologie and hope you will give us another chance. Be sure to mention this tweet with your next order to get a free meal, on us!",in_reply_to_status_id=statusID)
         print("+negative", score)
 
 
-def print_result(annotations):
+def print_result(annotations, tweetID):
     score = annotations.document_sentiment.score
     magnitude = annotations.document_sentiment.magnitude
 
@@ -70,7 +77,7 @@ def print_result(annotations):
         sentence_sentiment = sentence.sentiment.score
         print('Sentence {} has a sentiment score of {}'.format(
             index, sentence_sentiment))
-        threshold(sentence_sentiment)
+        threshold(sentence_sentiment, tweetID)
 
     print('Overall Sentiment: score of {} with magnitude of {}'.format(
         score, magnitude))
@@ -89,7 +96,7 @@ def analyze(movie_review_filename):
             type=enums.Document.Type.PLAIN_TEXT)
             annotations=(client.analyze_sentiment(document=document))
             # Print the results
-            print_result(annotations)
+            print_result(annotations,tweetID)
 
     # with open(movie_review_filename, 'r') as review_file:
     #     # Instantiates a plain text document.
